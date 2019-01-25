@@ -30,19 +30,17 @@ class Home extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const nytKey = process.env.NYT_APIKEY;
-    const apiBase = `https://api.nytimes.com/svc/search/v2/articlesearch.json`;
-    console.log(apiBase);
-
-    var searchString = `${apiBase}?q=${this.state.searchTerm}&api-key=${nytKey}`
-    console.log(searchString);
-    
     if (this.state.searchTerm) {
-      axios.get(apiBase)
-      .then((response) => {
-        console.log(response);
-      });
-      
+      API.getNYTArticles(this.state.searchTerm)
+        .then( res => {
+          this.setState({
+            articles: res.data,
+            searchTerm: "",
+            startyear: "",
+            endyear: ""
+          })
+        })
+        .catch(error => console.log(error));
     }
   }
 

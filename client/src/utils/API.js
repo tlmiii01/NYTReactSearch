@@ -19,5 +19,10 @@ export default {
   // Delete an article
   deleteArticle: (id) => {
     return axios.delete(`/api/articles/${id}`);
+  },
+
+  // Perform a search using the NYT API
+  getNYTArticles: (searchTerm) => {
+    return axios.get(`/api/nyt/${searchTerm}`);
   }
 };

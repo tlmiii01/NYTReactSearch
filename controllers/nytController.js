@@ -8,12 +8,10 @@ if (dotenv.error) {
 
 const nytKey = process.env.NYT_APIKEY;
 const apiBase = `https://api.nytimes.com/svc/search/v2/articlesearch.json`;
-// console.log(apiBase);
 
 module.exports = {
   getNYTArticles: (req, res) => {
     var searchString = `${apiBase}?q=${req.params.searchTerm}&api-key=${nytKey}`
-    console.log(searchString);
     
     axios.get(searchString)
       .then( (result) => {
