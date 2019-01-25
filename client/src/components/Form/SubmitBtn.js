@@ -1,9 +1,9 @@
 import React from "react";
 
-const SubmitBtn = props => (
-  <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+export const SubmitBtn = props => (
+  <button {...props} className="btn btn-primary">
     {props.children}
   </button>
 );
 
-export default SubmitBtn;
+// export default SubmitBtn;

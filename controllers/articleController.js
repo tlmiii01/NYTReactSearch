@@ -1,12 +1,4 @@
 const db = require("../models");
-// Will move to the appropriate JS file.
-// const dotenv = require("dotenv").config();
-// if (dotenv.error) {
-//   throw dotenv.error;
-// }
-
-// const apiKey = process.env.NYT_APIKEY;
-// const apiBase = `https://api.nytimes.com/svc/search/v2/articlesearch.json`;
 
 module.exports = {
   findAll: (req, res) => {

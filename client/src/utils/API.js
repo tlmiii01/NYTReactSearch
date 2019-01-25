@@ -1,6 +1,6 @@
 import axios from "axios";
 
-module.exports = {
+export default {
   // Get all saved articles
   getArticles: () => {
     return axios.get("/api/articles");

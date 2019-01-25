@@ -1,2 +1,2 @@
-export * from "./Input";
-export * from "./SubmitBtn";
+export {Input} from "./Input";
+export {SubmitBtn} from "./SubmitBtn";
