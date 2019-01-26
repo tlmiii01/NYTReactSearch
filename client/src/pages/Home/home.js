@@ -6,7 +6,7 @@ import axios from "axios";
 
 // Pull in my components
 import API from "../../utils/API";
-import SaveBtn from "../../components/DeleteBtn";
+import SaveBtn from "../../components/SaveBtn";
 import { Container, Row, Col } from "../../components/Grid";
 import { Input, SubmitBtn } from "../../components/Form";
 import { List, ListItem } from "../../components/List";
@@ -42,6 +42,12 @@ class Home extends Component {
         })
         .catch(error => console.log(error));
     }
+  }
+
+  saveArticle = (id) => {
+    var articleData = this.state.articles.find( article => article._id === id );
+    API.saveArticle(articleData)
+      .catch(error => console.log(error));
   }
 
   render() {
@@ -95,10 +101,11 @@ class Home extends Component {
               <h5 className="card-header text-center">Results</h5>
               <List>
                 {this.state.articles.map(article => (
-                  <ListItem>
-                    <a href={article.url} target="_blank" ref="noopener noreferrer">
+                  <ListItem key={article._id}>
+                    <a href={article.url} target="_blank" rel="noopener noreferrer">
                       {article.title}
                     </a>
+                    <SaveBtn onClick={() => this.saveArticle(article._id) }/>
                   </ListItem>
 
                 ))}
@@ -106,7 +113,7 @@ class Home extends Component {
 
             </div>
           ) : (
-              <h5>This is a test</h5>
+              <h2 className="text-center">Enter a search term and press Search</h2>
             )}
         </div>
 

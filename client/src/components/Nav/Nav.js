@@ -12,7 +12,7 @@ const Nav = () => (
           </Link>
         </li>
         <li className="nav-item ml-3">
-          <Link to={"/"}>
+          <Link to={"/saved"}>
             Saved
           </Link>
         </li>

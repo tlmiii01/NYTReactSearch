@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav"
 
 import Home from "./pages/Home";
+import Saved from "./pages/Saved";
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/saved" component={Saved} />
           </Switch>
         </div>
       </Router>

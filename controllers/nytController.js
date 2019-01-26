@@ -19,6 +19,7 @@ module.exports = {
         var articleData = [];
         for (article of articles) {
           articleData.push({
+            _id: article._id,
             title: article.headline.main,
             date: article.pub_date,
             url: article.web_url
