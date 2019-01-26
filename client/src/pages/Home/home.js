@@ -93,6 +93,16 @@ class Home extends Component {
           {this.state.articles.length ? (
             <div className="card my-5">
               <h5 className="card-header text-center">Results</h5>
+              <List>
+                {this.state.articles.map(article => (
+                  <ListItem>
+                    <a href={article.url} target="_blank" ref="noopener noreferrer">
+                      {article.title}
+                    </a>
+                  </ListItem>
+
+                ))}
+              </List>
 
             </div>
           ) : (
